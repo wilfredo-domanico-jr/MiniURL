@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniURL - URL Shortener</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>MiniURL</h1>
+      <p class="subtitle">Shorten your links in seconds</p>
+
+      <div class="input-group">
+        <input
+          type="url"
+          id="originalUrl"
+          placeholder="Enter your long URL here..."
+          required
+        />
+        <button onclick="shorten()">Shorten</button>
+      </div>
+
+      <div class="result" id="result"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

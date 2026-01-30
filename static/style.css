@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.input-group {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+input[type="url"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 1rem;
+  background: transparent;
+  color: #000;
+  border-radius: 8px;
+}
+
+input[type="url"]::placeholder {
+  color: #999;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.result {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 100px;
+  display: none;
+  animation: slideIn 0.3s ease;
+}
+
+.result.show {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-label {
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.short-url-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #000;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 16px;
+}
+
+.short-url {
+  flex: 1;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.125rem;
+  word-break: break-all;
+  transition: color 0.3s ease;
+}
+
+.short-url:hover {
+  color: #999;
+}
+
+.copy-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: #e0e0e0;
+}
+
+.copy-btn.copied {
+  background: #4caf50;
+  color: #fff;
+}
+
+.error {
+  color: #ff4444;
+  padding: 16px;
+  background: #1a0000;
+  border: 1px solid #ff4444;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .short-url-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copy-btn {
+    width: 100%;
+  }
+}

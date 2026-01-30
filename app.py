@@ -1,7 +1,7 @@
 import sqlite3
 import string
 import random
-from flask import Flask, request, redirect, jsonify
+from flask import Flask, request, redirect, jsonify, render_template
 
 app = Flask(__name__)
 DB_NAME = "urls.db"
@@ -30,6 +30,13 @@ def generate_short_code(length=6):
     return ''.join(random.choice(characters) for _ in range(length))
 
 # -------------------------
+# Home page
+# -------------------------
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# -------------------------
 # Create short URL
 # -------------------------
 @app.route("/shorten", methods=["POST"])
@@ -52,7 +59,7 @@ def shorten_url():
         )
         conn.commit()
     except sqlite3.IntegrityError:
-        return jsonify({"error": "Short code collision"}), 500
+        return jsonify({"error": "Short code collision, try again"}), 500
     finally:
         conn.close()
 
