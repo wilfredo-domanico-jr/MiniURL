@@ -31,5 +31,5 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
-
+# Auto generated SQLit DB
 urls.db
