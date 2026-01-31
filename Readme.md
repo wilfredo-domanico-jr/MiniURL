@@ -7,6 +7,14 @@
 
 ---
 
+## Screenshot
+
+<p align="center">
+  <img src="images/screenshot.png" alt="MiniURL Screenshot" width="700">
+</p>
+
+---
+
 ## Features
 
 - Shorten long URLs into unique, short codes.

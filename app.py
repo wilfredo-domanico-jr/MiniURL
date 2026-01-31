@@ -65,7 +65,8 @@ def shorten_url():
 
     return jsonify({
         "original_url": original_url,
-        "short_url": f"http://localhost:5000/{short_code}"
+        # "short_url": f"http://localhost:5000/{short_code}"
+        "short_url": f"http://mini-url/{short_code}"
     })
 
 # -------------------------
