@@ -10,7 +10,7 @@
 ## Screenshot
 
 <p align="center">
-  <img src="images/screenshot.png" alt="MiniURL Screenshot" width="700">
+  <img src="static/images/screenshot.png" alt="MiniURL Screenshot" width="700">
 </p>
 
 ---
